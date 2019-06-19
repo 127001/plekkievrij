@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head></head>
+  <body>
+    <script>
+      // fetch('https://parkmobile.nl/wp-admin/admin-ajax.php?action=parkbee_get_garages_availability', {mode: 'no-cors'})
+      fetch('js/admin-ajax.php.json', {mode: 'no-cors'})
+        .then(function(response) {
+          return response.text();
+        })
+        .then(function(text) {
+          console.log('Request successful', text);
+        })
+        .catch(function(error) {
+          log('Request failed', error)
+        });
+    </script>
+  </body>
+</html>
