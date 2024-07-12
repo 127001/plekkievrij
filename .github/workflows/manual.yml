@@ -11,7 +11,7 @@ jobs:
     steps:
       - shell: bash
         env:
-          LOCAL_VERSION: ${{ NODE_VERSION }}
+          LOCAL_VERSION: $NODE_VERSION
         run: |
           example-command "$SUPER_SECRET"
           
