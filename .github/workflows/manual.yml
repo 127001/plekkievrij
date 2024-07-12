@@ -18,8 +18,8 @@ jobs:
       - name: 3 read env var
         run: echo "my environment node is $NODE_VERSION"
 
-      - name: Read node from package.json
-        uses: culshaw/read-package-node-version-actions@v2
+      - name: Read package.json node version
+        uses: culshaw/read-package-node-version-actions@v2.0.0
         id: package-node-version
       
       - uses: actions/setup-node@v4
