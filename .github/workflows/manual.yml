@@ -16,7 +16,7 @@ jobs:
         run: echo "my local node is ${{ vars.NODE_VERSION }}
 
       - name: 3 read env var
-        run: echo "my environment node is ${{ NODE_VERSION }}
+        run: echo "my environment node is $NODE_VERSION
       
       - uses: actions/setup-node@v4
         with:
