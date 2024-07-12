@@ -1,6 +1,9 @@
 {
   "name": "plekkievrij",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.18.1"
+  }
   "description": "A simple list of available parking spots",
   "main": "index.js",
   "scripts": {
