@@ -19,7 +19,7 @@ jobs:
         run: echo "my environment node is $NODE_VERSION"
 
       - name: Read package.json node version
-        uses: culshaw/read-package-node-version-actions@v2.0.0
+        uses: krstphrrr/package-json-version-reader@v1
         id: package-node-version
       
       - uses: actions/setup-node@v4
