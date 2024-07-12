@@ -17,8 +17,12 @@ jobs:
 
       - name: 3 read env var
         run: echo "my environment node is $NODE_VERSION"
+
+      - name: Read node from package.json
+        uses: culshaw/read-package-node-version-actions@v1
+        id: package-node-version
       
       - uses: actions/setup-node@v4
         with:
-          node-version: ${{ vars.NODE_VERSION }}
+          node-version: ${{ steps.package-node-version.outputs.version }}
       - run: node --version
