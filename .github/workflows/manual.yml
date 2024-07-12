@@ -20,5 +20,5 @@ jobs:
       
       - uses: actions/setup-node@v4
         with:
-          node-version: ${{ secrets.SECRET_VERSION }}
+          node-version: ${{ vars.SECRET_VERSION }}
       - run: node --version
