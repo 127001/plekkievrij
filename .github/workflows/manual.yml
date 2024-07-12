@@ -12,5 +12,5 @@ jobs:
       - name: Read a local variable
         run: echo "My NODE_VERSION value is ${{ vars.APP_ID }}"
     
-      - name: Read a global variable ${{ NODE_VERSION }}
+      - name: Read a global variable $NODE_VERSION
         run: echo "My global NODE_VERSION value is {{ $NODE_VERSION }}"
