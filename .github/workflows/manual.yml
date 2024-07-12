@@ -18,6 +18,14 @@ jobs:
       - name: 3 read env var
         run: echo "my environment node is $NODE_VERSION"
 
+      - name: 4 github env
+      - run: |
+          echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
+          cat ./package.json >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+      - run: |
+          echo '${{ fromJson(env.PACKAGE_JSON).engines.node }}'
+
       - name: Read package.json node version
         uses: martinbeentjes/npm-get-version-action@v1.3.1
         id: package-node-version
