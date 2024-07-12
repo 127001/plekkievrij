@@ -8,9 +8,11 @@ jobs:
     env:
       NODE_VERSION: ${{ vars.NODE_VERSION }}
     environment: develop
-    steps:
-      - name: Read a local variable
-        run: echo "My NODE_VERSION value is ${{ vars.APP_ID }}"
-    
+    steps:   
       - name: Read a global variable $NODE_VERSION
-        run: echo "My global NODE_VERSION value is {{ $NODE_VERSION }}"
+        run: echo "My global NODE_VERSION value is $NODE_VERSION"
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: $NODE_VERSION
+      - run: node --version
