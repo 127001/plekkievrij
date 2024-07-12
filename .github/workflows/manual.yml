@@ -19,11 +19,12 @@ jobs:
         run: echo "my environment node is $NODE_VERSION"
 
       - name: 4 github env
-      - run: |
+        run: |
           echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
           cat ./package.json >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
-          
+
+      - name: 5 github env
       - run: |
           echo '${{ fromJson(env.PACKAGE_JSON).engines.node }}'
 
