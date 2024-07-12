@@ -8,7 +8,16 @@ jobs:
     environment: develop
     # env:
     #   LOCAL_NODE_VERSION: ${{ vars.NODE_VERSION }}
-    steps:   
+    steps:
+      - shell: bash
+        env:
+          LOCAL_VERSION: ${{ NODE_VERSION }}
+        run: |
+          example-command "$SUPER_SECRET"
+          
+      - run: echo "1 enviroment $NODE_VERSION"
+      - run: echo "2 enviroment ${{ NODE_VERSION }}"
+      - run: echo "3 enviroment ${{ env.NODE_VERSION }}"
       # - name: Read a global variable $NODE_VERSION
       #   run: echo "My global NODE_VERSION value is $NODE_VERSION"
 
@@ -18,7 +27,7 @@ jobs:
       # - name: read local 2
       #   run: echo "my local node is ${{ local_node_version }}
       
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ vars.SECRET_VERSION }}
-      - run: node --version
+      # - uses: actions/setup-node@v4
+      #   with:
+      #     node-version: ${{ vars.SECRET_VERSION }}
+      # - run: node --version
