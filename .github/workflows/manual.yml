@@ -13,7 +13,7 @@ jobs:
         run: echo "my local node is ${{ env.NODE_VERSION }}
 
       - name: 2 read env var
-        run: echo "my local node is ${{ var.NODE_VERSION }}
+        run: echo "my local node is ${{ vars.NODE_VERSION }}
 
       - name: 3 read env var
         run: echo "my environment node is ${{ NODE_VERSION }}
