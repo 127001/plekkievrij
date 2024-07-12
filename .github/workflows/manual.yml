@@ -13,7 +13,7 @@ jobs:
         env:
           LOCAL_VERSION: $NODE_VERSION
         run: |
-          example-command "$SUPER_SECRET"
+          example-command "$LOCAL_VERSION"
           
       - run: echo "1 enviroment $NODE_VERSION"
       # - run: echo "2 enviroment ${{ NODE_VERSION }}"
