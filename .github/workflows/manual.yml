@@ -11,8 +11,14 @@ jobs:
     steps:   
       - name: Read a global variable $NODE_VERSION
         run: echo "My global NODE_VERSION value is $NODE_VERSION"
+
+      - name: read local
+        run: echo "my local node is $LOCAL_NODE_VERSION"
+
+      - name: read local 2
+        run: echo "my local node is ${{ local_node_version }}
       
       - uses: actions/setup-node@v4
         with:
-          node-version: $LOCAL_NODE_VERSION
+          node-version: ${{ local_node_version }}
       - run: node --version
