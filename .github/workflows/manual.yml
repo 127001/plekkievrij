@@ -5,7 +5,12 @@ on:
 jobs:
   do-some:
     runs-on: ubuntu-latest
+    env:
+      NODE_VERSION: ${{ vars.NODE_VERSION }}
     environment: develop
     steps:
-      - run: echo "hello world"
-      - run: echo "$NODE_VERSION"
+      - name: Read a local variable
+        run: echo "My NODE_VERSION value is ${{ vars.APP_ID }}"
+    
+      - name: Read a global variable
+        run: echo "My global NODE_VERSION value is {{ $NODE_VERSION }}"
